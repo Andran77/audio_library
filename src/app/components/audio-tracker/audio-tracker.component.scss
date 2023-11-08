@@ -1,0 +1,39 @@
+.main {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .audio-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .audio-icon, .close-icon {
+      color: #ffffff;
+      margin: auto 0.5rem;
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+    }
+    .close-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    &-error {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      color: #ff3232;
+      background: white;
+      padding: 3px 25px;
+      border-radius: 10px;
+      img, p {
+        margin: auto;
+      }
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

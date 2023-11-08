@@ -1,0 +1,28 @@
+.audio-list-table {
+  color: white;
+  width: 100%;
+  th {
+    background: #81B0DE;
+    font-weight: 600;
+    font-size: 1rem;
+    color: black;
+  }
+  td {
+    background: #A7C6E5;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    font-size: 1rem;
+  }
+  th, td {
+    padding: 5px 10px;
+  }
+  .mat-row {
+    cursor: pointer;
+  }
+}
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+  color: black;
+}

@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="audio-content">
+    <div class="audio-block" *ngIf="!showError && audioFile">
+      <span (click)="close()" class="close-icon">
+        <mat-icon>close</mat-icon>
+      </span>
+      <h4 class="audio-block-header">{{ content?.title }}</h4>
+      <div class="audio-content-error" *ngIf="showError">
+        <mat-icon>error</mat-icon>
+        <p>Cannot Load Item</p>
+      </div>
+      <div class="mat-slider-block">
+        <div class="audio-block-slider">
+          <span (click)="togglePlay()" class="audio-icon">
+            <mat-icon>{{ play ? 'pause_circle_filled' : 'play_circle_filled' }}</mat-icon>
+          </span>
+          <mat-slider class="time-slider" min="0" name="audio" [max]="audioFile.duration" [step]="0.1" [value]="currentTime" (input)="onChangeDur($event)"></mat-slider>
+          <span class="text-white">{{ currentTime | durationPipe }}</span>
+        </div>
+        <div class="audio-block-volume">
+          <span (click)="muteAudio()" class="audio-icon">
+            <mat-icon>{{ mutedAudio ? 'volume_off' : 'volume_up' }}</mat-icon>
+          </span>
+          <mat-slider class="time-slider" min="0" name="volume" [max]="1" [step]="0.1" [value]="audioFile.volume" (input)="onChangeVol($event)"></mat-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
