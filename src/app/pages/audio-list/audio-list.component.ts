@@ -52,19 +52,14 @@ export class AudioListComponent implements OnInit {
       },
       error: err => {
         console.log('Get Audio List Error: ', err);
+        this.audioList = [];
+        this.dataSource = new MatTableDataSource(this.audioList);
       }
     });
   }
 
   pageChange(event: { pageSize: number; pageIndex: number; }): void {
-    this.currentPage = event.pageIndex + 1;
-    this.router.navigate(['/'], {
-      queryParams: {
-        page: this.currentPage
-      },
-      queryParamsHandling: 'merge'
-    });
-    window.scrollTo(0, 0);
+    // todo
   }
 
   selectAudio(audio: Content): void {
